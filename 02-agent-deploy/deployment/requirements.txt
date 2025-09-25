@@ -1,0 +1,5 @@
+langchain-community==0.3.29
+langchain_openai==0.3.32 
+langchain_core==0.3.75 
+langgraph==0.6.7 
+trustcall==0.0.39
