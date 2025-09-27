@@ -17,7 +17,7 @@
 ### 技术栈
 - **核心框架**：LangGraph + LangChain
 - **评估工具**：Langfuse
-- **开发语言**：Python 3.11+
+- **开发语言**：Python 3.12.11
 - **可视化**：LangGraph Studio
 - **部署**：Docker + Redis + PostgreSQL
 
@@ -148,10 +148,201 @@
 
 ---
 
+## 🛠️ 环境安装指南
+
+### 快速开始
+
+在Ubuntu 22.04系统上安装FlyAI Agent in Action环境：
+
+#### 1. 准备工作
+
+```bash
+# 更新系统包
+sudo apt update && sudo apt upgrade -y
+
+# 安装必要的系统依赖
+sudo apt install -y wget curl git build-essential
+```
+
+#### 2. 安装Miniconda (如果未安装)
+
+```bash
+# 下载Miniconda安装包
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# 安装Miniconda
+bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
+
+# 初始化conda
+$HOME/miniconda3/bin/conda init bash
+
+# 重新加载shell配置
+source ~/.bashrc
+
+# 验证conda安装
+conda --version
+```
+
+#### 3. 使用自动安装脚本
+
+```bash
+# 给脚本添加执行权限
+chmod +x ubuntu_quick_install.sh
+
+# 运行安装脚本
+./ubuntu_quick_install.sh
+```
+
+#### 4. 手动安装（推荐 - 仅需3步）
+
+```bash
+# 1. 创建conda环境
+conda create -n flyai_agent_in_action python=3.12.11 -y
+
+# 2. 激活环境
+conda activate flyai_agent_in_action
+
+# 3. 安装所有依赖
+pip install -r requirements.txt
+```
+
+> **💡 就这么简单！** 所有依赖都在 `requirements.txt` 中，一键安装完成。
+
+**注意**: 如果需要安装可选依赖，可以手动安装：
+```bash
+# 可选依赖（安全监控和数据处理扩展）
+pip install llm-guard==0.3.16 unstructured==0.18.13 selenium==4.35.0 langchain-chroma==0.2.5
+```
+
+#### 5. 验证安装
+
+```bash
+# 或手动验证
+python -c "
+import langchain, langgraph, langfuse, trustcall
+print('✅ 所有核心依赖安装成功！')
+print(f'LangChain: {langchain.__version__}')
+print(f'LangGraph: {langgraph.__version__}')
+print(f'Langfuse: {langfuse.__version__}')
+"
+```
+
+#### 6. 配置API密钥
+
+```bash
+# 编辑bash配置文件
+vim ~/.bashrc
+
+# 添加以下内容到文件末尾：
+export OPENAI_API_KEY="your_openai_api_key_here"
+export LANGFUSE_SECRET_KEY="your_langfuse_secret_key"
+export LANGFUSE_PUBLIC_KEY="your_langfuse_public_key"
+export TAVILY_API_KEY="your_tavily_api_key"
+
+# 重新加载配置
+source ~/.bashrc
+```
+
+#### 7. 启动Jupyter
+
+```bash
+# 确保环境已激活
+conda activate flyai_agent_in_action
+
+# 启动Jupyter Notebook
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
+```
+
+### Ubuntu特定注意事项
+
+#### 系统依赖
+
+某些包可能需要额外的系统依赖：
+
+```bash
+# 为了支持某些机器学习库
+sudo apt install -y python3-dev python3-pip
+
+# 为了支持图像处理和CV相关功能
+sudo apt install -y libgl1-mesa-glx libglib2.0-0
+
+# 为了支持SSL和加密
+sudo apt install -y libssl-dev libffi-dev
+
+# 为了支持Selenium的Chrome驱动
+sudo apt install -y chromium-browser chromium-chromedriver
+```
+
+#### 内存优化
+
+Ubuntu系统内存优化建议：
+
+```bash
+# 增加swap空间（如果内存不足）
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+# 永久启用
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+
+#### 防火墙配置
+
+如果需要远程访问Jupyter：
+
+```bash
+# 允许Jupyter端口
+sudo ufw allow 8888/tcp
+
+# 启用防火墙
+sudo ufw enable
+```
+
+### 故障排除
+
+#### 常见问题
+
+1. **conda命令未找到**
+   ```bash
+   export PATH="$HOME/miniconda3/bin:$PATH"
+   source ~/.bashrc
+   ```
+
+2. **权限错误**
+   ```bash
+   sudo chown -R $USER:$USER $HOME/miniconda3
+   ```
+
+3. **SSL证书错误**
+   ```bash
+   pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org <package_name>
+   ```
+
+4. **内存不足**
+   ```bash
+   # 清理conda缓存
+   conda clean --all
+   
+   # 限制并行下载
+   conda config --set max_procs 1
+   ```
+
+### 验证清单
+
+- [ ] Conda环境创建成功
+- [ ] 所有核心依赖安装完成
+- [ ] API密钥配置正确
+- [ ] Jupyter Notebook可以正常启动
+- [ ] 示例代码可以运行
+
+---
+
 ## 课程资源配置
 
 ### 📚 必需环境
-- **Python 3.11+** 
+- **Python 3.12.11** 
 - **Jupyter Notebook**
 - **Docker Desktop**
 - **Git**
