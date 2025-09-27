@@ -1,0 +1,433 @@
+syllabus:
+  - chapter_id: 1
+    chapter_title: 第一章：Agent基础入门
+    lessons:
+      - number: 1
+        title: 3分钟了解Agent与LangGraph
+        practical: false
+        topics:
+          - 什么是Agent？Agent 与传统程序架构对比
+          - LangGraph 核心设计理念：精确性与控制力
+          - 聊天模型（Chat Models）基础概念
+          - LangGraph 生态系统介绍
+          - 快速上手：第一个 LangGraph 程序
+          - 社区资源（官方文档、GitHub、学习资源）
+        code:
+          - 01-agent-build/0-Introduce/basics.ipynb
+      - number: 1.1
+        title: Agent开发环境搭建
+        practical: true
+        topics:
+          - Python 3.11+ 环境配置（推荐 3.12）
+          - 依赖包安装与版本管理（conda/pip）
+          - API 密钥配置（OpenAI、Langfuse 等）
+          - LangGraph Studio 安装与配置
+          - Jupyter Notebook 环境设置
+          - 常见环境问题排查
+        code:
+          - README.md
+          - ubuntu_quick_install.sh
+          - requirements.txt
+          - 01-agent-build/1-Base/06-deployment.ipynb
+          - 01-agent-build/1-Base/studio/
+      - number: 2
+        title: Agent记忆系统基础
+        practical: true
+        topics:
+          - 检查点机制（Checkpointer）原理
+          - SQLite 内存存储实现
+          - 状态持久化策略
+          - 会话记忆管理
+          - 记忆检索优化
+          - 内存清理机制
+        code:
+          - 01-agent-build/1-Base/01-agent-memory.ipynb
+      - number: 3
+        title: 链式调用与路由
+        practical: true
+        topics:
+          - LangChain 基础链式调用
+          - 路由器设计原理
+          - 条件分支实现
+          - 链式错误处理
+          - 性能优化策略
+          - 调试技巧实战
+        code:
+          - 01-agent-build/1-Base/02-chain.ipynb
+          - 01-agent-build/1-Base/03-router.ipynb
+      - number: 4
+        title: 基础Agent开发
+        practical: true
+        topics:
+          - Agent 与 Chain 的区别
+          - 工具调用机制深入解析
+          - ReAct 模式原理与实现
+          - 错误处理策略
+          - 构建基础聊天机器人
+          - 性能监控与优化
+        code:
+          - 01-agent-build/1-Base/04-agent.ipynb
+      - number: 5
+        title: 简单图构建实战
+        practical: true
+        topics:
+          - StateGraph 核心概念详解
+          - 节点（Node）、边（Edge）、状态（State）
+          - 条件路由的设计原理
+          - 图的编译与执行流程
+          - 构建 3 节点简单图
+          - 图可视化与调试技巧
+        code:
+          - 01-agent-build/1-Base/05-simple-graph.ipynb
+      - number: 5.1
+        title: 案例：LangGraph Studio 部署
+        practical: true
+        topics:
+          - Studio 环境配置
+          - 图的可视化调试
+          - 实时监控设置
+          - 性能分析工具
+          - 部署配置优化
+          - 常见问题解决
+        code:
+          - 01-agent-build/1-Base/06-deployment.ipynb
+          - 01-agent-build/1-Base/studio/
+  - chapter_id: 2
+    chapter_title: 第二章：状态管理与内存系统
+    lessons:
+      - number: 6
+        title: 状态模式设计
+        practical: true
+        topics:
+          - 复杂状态模式设计原则
+          - 类型化状态的优势
+          - 多模式状态管理策略
+          - 状态验证与错误处理
+          - 自定义状态模式实现
+          - 复杂数据结构处理
+        code:
+          - 01-agent-build/2-StateAndMemory/01-state-schema.ipynb
+          - 01-agent-build/2-StateAndMemory/03-multiple-schemas.ipynb
+      - number: 7
+        title: 状态缩减器与消息管理
+        practical: true
+        topics:
+          - 状态缩减器设计原理
+          - 消息过滤与修剪策略
+          - 内存优化技术
+          - 长对话处理方案
+          - 自定义状态缩减器
+          - 过滤策略实现
+        code:
+          - 01-agent-build/2-StateAndMemory/02-state-reducers.ipynb
+          - 01-agent-build/2-StateAndMemory/04-trim-filter-messages.ipynb
+      - number: 8
+        title: 外部存储与持久化
+        practical: true
+        topics:
+          - 检查点器（Checkpointer）概念
+          - SQLite vs PostgreSQL 选择
+          - 对话摘要技术
+          - 数据持久化策略
+          - SQLite 检查点器配置
+          - 持久化性能测试
+        code:
+          - 01-agent-build/2-StateAndMemory/05-chatbot-external-memory.ipynb
+          - 01-agent-build/2-StateAndMemory/06-chatbot-summarization.ipynb
+  - chapter_id: 3
+    chapter_title: 第三章：人机交互系统
+    lessons:
+      - number: 9
+        title: 流式处理与中断
+        practical: true
+        topics:
+          - 流式中断原理
+          - 实时数据流处理
+          - 中断机制设计
+          - 并发处理策略
+          - 流式中断实现
+          - 性能优化技巧
+        code:
+          - 01-agent-build/3-HumanInTheLoop/01-streaming-interruption.ipynb
+      - number: 10
+        title: 断点与调试机制
+        practical: true
+        topics:
+          - Human-in-the-Loop 设计原理
+          - 断点机制实现
+          - 动态断点控制
+          - 审批流程设计
+          - 静态断点设置
+          - 用户交互界面
+        code:
+          - 01-agent-build/3-HumanInTheLoop/02-breakpoints.ipynb
+          - 01-agent-build/3-HumanInTheLoop/04-dynamic-breakpoints.ipynb
+      - number: 11
+        title: 状态编辑与反馈
+        practical: true
+        topics:
+          - 状态编辑机制
+          - 人工反馈集成
+          - 状态回滚技术
+          - 用户体验设计
+          - 反馈收集机制
+          - 状态同步处理
+        code:
+          - 01-agent-build/3-HumanInTheLoop/03-edit-state-human-feedback.ipynb
+      - number: 12
+        title: 时间旅行调试
+        practical: true
+        topics:
+          - 时间旅行调试技术
+          - 状态快照管理
+          - 历史状态回溯
+          - 调试会话管理
+          - 状态对比分析
+          - 调试工具优化
+        code:
+          - 01-agent-build/3-HumanInTheLoop/05-time-travel.ipynb
+  - chapter_id: 4
+    chapter_title: 第四章：高级Agent开发
+    lessons:
+      - number: 13
+        title: 并行执行与性能优化
+        practical: true
+        topics:
+          - 并行节点设计原理
+          - 异步执行模式
+          - 性能瓶颈识别
+          - 资源调度策略
+          - 并行节点实现
+          - 性能基准测试
+        code:
+          - 01-agent-build/4-BuildYourAssiant/01-parallelization.ipynb
+      - number: 14
+        title: Map-Reduce模式
+        practical: true
+        topics:
+          - Map-Reduce 设计模式
+          - 数据分片策略
+          - 结果聚合技术
+          - 容错机制设计
+          - Map-Reduce 实现
+          - 大数据处理测试
+        code:
+          - 01-agent-build/4-BuildYourAssiant/02-map-reduce.ipynb
+      - number: 15
+        title: 子图设计与模块化
+        practical: true
+        topics:
+          - 子图架构设计
+          - 模块化 Agent 开发
+          - 组件复用策略
+          - 子图通信机制
+          - 复杂工作流编排
+          - 模块化测试方法
+        code:
+          - 01-agent-build/4-BuildYourAssiant/03-sub-graph.ipynb
+      - number: 15.1
+        title: 案例：研究助手系统
+        practical: true
+        topics:
+          - 研究助手案例分析
+          - 多智能体协作设计
+          - 信息收集与整合
+          - 报告生成流程
+          - 研究助手开发实战
+          - 系统集成测试
+        code:
+          - 01-agent-build/4-BuildYourAssiant/04-research-assistant/
+  - chapter_id: 5
+    chapter_title: 第五章：长期记忆系统
+    lessons:
+      - number: 16
+        title: 记忆存储架构
+        practical: true
+        topics:
+          - 长期记忆系统设计
+          - 向量数据库集成
+          - 记忆检索策略
+          - 记忆更新机制
+          - 记忆存储实现
+          - 性能优化调试
+        code:
+          - 01-agent-build/5-LongTermMemroy/01-memory_store.ipynb
+      - number: 17
+        title: 记忆模式与用户画像
+        practical: true
+        topics:
+          - 记忆模式设计
+          - 用户画像构建
+          - 个性化记忆管理
+          - 隐私保护机制
+          - 用户画像系统实现
+          - 隐私保护验证
+        code:
+          - 01-agent-build/5-LongTermMemroy/02-memoryschema_profile.ipynb
+      - number: 18
+        title: 记忆集合与分类
+        practical: true
+        topics:
+          - 记忆集合设计
+          - 记忆分类管理
+          - 记忆标签系统
+          - 记忆检索优化
+          - 集合操作实现
+          - 分类效果评估
+        code:
+          - 01-agent-build/5-LongTermMemroy/03-memoryschema_collection.ipynb
+      - number: 19
+        title: 记忆Agent整合
+        practical: true
+        topics:
+          - 记忆 Agent 架构
+          - 上下文感知技术
+          - 个性化交互
+          - 学习能力实现
+          - 上下文管理测试
+          - 学习效果评估
+        code:
+          - 01-agent-build/5-LongTermMemroy/04-memory_agent.ipynb
+  - chapter_id: 6
+    chapter_title: 第六章：生产部署与运维
+    lessons:
+      - number: 20
+        title: Agent创建与配置
+        practical: true
+        topics:
+          - Agent 实例创建
+          - 配置参数管理
+          - 环境变量设置
+          - 初始化流程
+          - 配置文件管理
+          - 创建流程测试
+        code:
+          - 02-agent-deploy/01-creating.ipynb
+      - number: 21
+        title: 连接管理与通信
+        practical: true
+        topics:
+          - Agent 连接机制
+          - 通信协议设计
+          - 连接池管理
+          - 会话管理机制
+          - 连接稳定性保障
+          - 通信性能优化
+        code:
+          - 02-agent-deploy/02-connecting.ipynb
+      - number: 22
+        title: 并发处理与防重复
+        practical: true
+        topics:
+          - 并发处理机制
+          - 防重复提交
+          - 消息队列管理
+          - 并发控制策略
+          - 系统稳定性保障
+          - 性能压力测试
+        code:
+          - 02-agent-deploy/03-double-texting.ipynb
+      - number: 23
+        title: Assistant API开发
+        practical: true
+        topics:
+          - Assistant API 设计
+          - RESTful 接口实现
+          - API 文档生成
+          - 接口测试验证
+          - API 版本管理
+          - 接口性能优化
+        code:
+          - 02-agent-deploy/04-assistant.ipynb
+      - number: 23.1
+        title: 案例：容器化部署
+        practical: true
+        topics:
+          - Docker 容器化配置
+          - 微服务架构设计
+          - 环境配置管理
+          - 服务编排策略
+          - Docker 镜像构建
+          - 生产部署测试
+        code:
+          - 02-agent-deploy/deployment/
+  - chapter_id: 7
+    chapter_title: 第七章：Agent评估与监控
+    lessons:
+      - number: 24
+        title: Agent评估体系构建
+        practical: false
+        topics:
+          - 评估在 AI 产品中的重要性
+          - 评估指标体系设计
+          - 自动化 vs 人工评估
+          - 评估数据准备策略
+          - 评估框架搭建
+          - 评估流程自动化
+        code:
+          - 03-agent-evaluation/langfuse/大模型评估体系与Langfuse实战指南.md
+      - number: 25
+        title: OpenAI SDK集成
+        practical: true
+        topics:
+          - OpenAI SDK 基础集成
+          - 结构化输出处理
+          - API 调用优化
+          - 错误处理机制
+          - 成本控制策略
+          - 性能监控实现
+        code:
+          - 03-agent-evaluation/langfuse/01_01_integration_openai_sdk.ipynb
+          - 03-agent-evaluation/langfuse/01_02_integration_openai_structured_output.ipynb
+      - number: 26
+        title: LangChain & LangGraph集成
+        practical: true
+        topics:
+          - LangChain 追踪集成
+          - LangGraph 监控配置
+          - 多智能体追踪
+          - 性能监控指标
+          - 配置集成优化
+          - 性能数据分析
+        code:
+          - 03-agent-evaluation/langfuse/01_03_integration_langchain.ipynb
+          - 03-agent-evaluation/langfuse/01_04_integration_langgraph.ipynb
+      - number: 27
+        title: 提示词管理与性能基准
+        practical: true
+        topics:
+          - 提示词版本管理
+          - 函数调用优化
+          - 性能基准测试
+          - A/B 测试设计
+          - 提示词优化策略
+          - 性能对比分析
+        code:
+          - 03-agent-evaluation/langfuse/02_prompt_management_openai_functions.ipynb
+          - 03-agent-evaluation/langfuse/02_prompt_management_performance_benchmark.ipynb
+      - number: 27.1
+        title: 案例：质量评估与优化
+        practical: true
+        topics:
+          - 质量评估方法论
+          - LangChain 评估集成
+          - 评估结果分析
+          - 持续优化策略
+          - 评估执行自动化
+          - 优化方案实施
+        code:
+          - 03-agent-evaluation/langfuse/03_evaluation_with_langchain.ipynb
+      - number: 27.2
+        title: 案例：安全监控系统
+        practical: true
+        topics:
+          - LangGraph Agent 示例
+          - LLM 安全监控
+          - 异常检测机制
+          - 安全策略配置
+          - 监控系统搭建
+          - 安全评估验证
+        code:
+          - 03-agent-evaluation/langfuse/04_example_langgraph_agents.ipynb
+          - 03-agent-evaluation/langfuse/04_example_llm_security_monitoring.ipynb
+
