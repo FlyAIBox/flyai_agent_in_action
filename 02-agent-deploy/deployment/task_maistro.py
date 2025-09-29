@@ -23,10 +23,6 @@
    - 支持并行工具调用提高效率
    - 基于 Pydantic 的数据验证
    - 可配置的用户隔离和分类管理
-
-作者：AI 助手
-版本：1.0
-依赖：LangGraph, LangChain, OpenAI, Trustcall
 """
 
 import uuid
