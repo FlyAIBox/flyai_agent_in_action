@@ -14,7 +14,7 @@
 | 5.1 | 案例：LangGraph Studio 部署 | 是 | Studio 配置；可视化调试；实时监控；性能分析；部署优化；常见问题 | 01-agent-build/1-Base/06-deployment.ipynb，01-agent-build/1-Base/studio/ |
 | 第二章：状态管理与内存系统 |||||
 | 6 | 状态模式设计 | 是 | 复杂状态；类型化状态；多模式管理；验证与错误；自定义模式；复杂结构 | 01-agent-build/2-StateAndMemory/01-state-schema.ipynb，01-agent-build/2-StateAndMemory/03-multiple-schemas.ipynb |
-| 7 | 状态缩减器与消息管理 | 是 | 缩减器原理；消息过滤修剪；内存优化；长对话；自定义缩减器；策略实现 | 01-agent-build/2-StateAndMemory/02-state-reducers.ipynb，01-agent-build/2-StateAndMemory/04-trim-filter-messages.ipynb |
+| 7 | 状态归约器与消息管理 | 是 | 归约器原理；消息过滤修剪；内存优化；长对话；自定义归约器；策略实现 | 01-agent-build/2-StateAndMemory/02-state-reducers.ipynb，01-agent-build/2-StateAndMemory/04-trim-filter-messages.ipynb |
 | 8 | 外部存储与持久化 | 是 | Checkpointer；SQLite vs PostgreSQL；对话摘要；持久化策略；配置；性能测试 | 01-agent-build/2-StateAndMemory/05-chatbot-external-memory.ipynb，01-agent-build/2-StateAndMemory/06-chatbot-summarization.ipynb |
 | 第三章：人机交互系统 |||||
 | 9 | 流式处理与中断 | 是 | 流式中断；实时数据流；中断机制；并发；实现；优化 | 01-agent-build/3-HumanInTheLoop/01-streaming-interruption.ipynb |

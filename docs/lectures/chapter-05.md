@@ -293,7 +293,7 @@ class AdaptiveRetriever:
 - 实操：`01-agent-build/5-LongTermMemroy/03-memoryschema_collection.ipynb`
 - 练习：实现“按主题聚类→召回”的流程
 
-## 19. 记忆 Agent 整合（实操）
+## 19. 记忆型智能体（Memory Agent）（实操）
 - 学习目标：将记忆接入对话，实现上下文感知
 - 要点：召回→重写→回答；个性化与持续学习
 - 实操：`01-agent-build/5-LongTermMemroy/04-memory_agent.ipynb`

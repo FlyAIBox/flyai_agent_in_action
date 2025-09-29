@@ -201,7 +201,7 @@ def measure_latency(func):
 - 实操：`01-agent-build/4-BuildYourAssiant/03-sub-graph.ipynb`
 - 练习：将通用“搜索→总结”封装为子图并复用
 
-## 15.1 案例：研究助手系统（实操）
+## 15.1 项目实战：深度研究助手系统
 - 学习目标：搭建多智能体协作的研究助手
 - 要点：信息搜集与整合、报告生成、质控
 - 实操：`01-agent-build/4-BuildYourAssiant/04-research-assistant/`

@@ -196,12 +196,11 @@ LangGraph 将这种思路用**图（Graph）**来表示：
 | **3: Human-In-The-Loop** | 具有人类监督的 Agent |
 | **4: Customization** | 可定制、实用的 Agent |
 
-## 1. Agent 开发环境搭建（实操）
+## 1. Agent 开发环境介绍
 - 学习目标：
   - 完成 Python/依赖安装与密钥配置
-  - 启用 LangGraph Studio 并能在本地调试
 - 步骤清单：
-  - Python 3.12（或 ≥3.11），conda/pip 环境
+  - Python 3.12，conda/pip 环境
   - 安装依赖与可选扩展；配置 OpenAI/Langfuse 密钥
   - 安装并启动 LangGraph Studio；Jupyter 配置
   - 常见问题排查（网络、SSL、代理、权限）
@@ -238,9 +237,5 @@ LangGraph 将这种思路用**图（Graph）**来表示：
   - 记忆检索与清理策略
 - 实操关联：`01-agent-build/1-Base/01-agent-memory.ipynb`
 - 练习：将记忆窗口从 k 条改为基于 token 的修剪
-## 5.1 案例：LangGraph Studio 部署（实操）
-- 学习目标：部署与调试 Studio，观察运行轨迹
-- 要点：可视化调试、实时监控、性能分析
-- 实操：`01-agent-build/1-Base/06-deployment.ipynb`，`01-agent-build/1-Base/studio/`
-- 练习：导出一次完整运行的可视化图并标注关键路径
+
 

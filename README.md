@@ -145,7 +145,7 @@
 | 实操 | 案例：LangGraph Studio部署 | 实操 | 1、Studio环境配置<br/>2、图的可视化调试<br/>3、实时监控设置<br/>4、性能分析工具<br/>5、部署配置优化<br/>6、常见问题解决 | `1-Base/06-deployment.ipynb`, `studio/` |
 | **第二章：状态管理与内存系统** | | | | |
 | 6 | 状态模式设计 | 实操 | 1、复杂状态模式设计原则<br/>2、类型化状态的优势<br/>3、多模式状态管理策略<br/>4、状态验证和错误处理<br/>5、自定义状态模式实现<br/>6、复杂数据结构处理 | `2-StateAndMemory/01-state-schema.ipynb`, `03-multiple-schemas.ipynb` |
-| 7 | 状态缩减器与消息管理 | 实操 | 1、状态缩减器设计原理<br/>2、消息过滤和修剪策略<br/>3、内存优化技术<br/>4、长对话处理方案<br/>5、自定义状态缩减器<br/>6、过滤策略实现 | `2-StateAndMemory/02-state-reducers.ipynb`, `04-trim-filter-messages.ipynb` |
+| 7 | 状态归约器与消息管理 | 实操 | 1、状态归约器设计原理<br/>2、消息过滤和修剪策略<br/>3、内存优化技术<br/>4、长对话处理方案<br/>5、自定义状态归约器<br/>6、过滤策略实现 | `2-StateAndMemory/02-state-reducers.ipynb`, `04-trim-filter-messages.ipynb` |
 | 8 | 外部存储与持久化 | 实操 | 1、检查点器（Checkpointer）概念<br/>2、SQLite vs PostgreSQL选择<br/>3、对话摘要技术<br/>4、数据持久化策略<br/>5、SQLite检查点器配置<br/>6、持久化性能测试 | `2-StateAndMemory/05-chatbot-external-memory.ipynb`, `06-chatbot-summarization.ipynb` |
 | **第三章：人机交互系统** | | | | |
 | 9 | 流式处理与中断 | 实操 | 1、流式中断原理<br/>2、实时数据流处理<br/>3、中断机制设计<br/>4、并发处理策略<br/>5、流式中断实现<br/>6、性能优化技巧 | `3-HumanInTheLoop/01-streaming-interruption.ipynb` |
