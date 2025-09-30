@@ -122,8 +122,7 @@ result = graph.invoke({
 ## 📁 项目结构
 
 ```
-langchain-academy/
-├── module-4/
+├── 04-research-assistant
 │   ├── research-assistant.ipynb    # 主要代码文件
 │   └── studio/                     # 部署相关文件
 ├── research-assistant-documentation.md  # 完整技术文档
