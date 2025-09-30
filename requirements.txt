@@ -14,6 +14,7 @@ langgraph==0.6.7
 langgraph-prebuilt==0.6.4
 langgraph-checkpoint-sqlite==2.0.11
 langgraph-cli==0.4.2
+langchain_huggingface==0.3.1
 # langsmith
 
 # ==========================================
@@ -32,6 +33,7 @@ langfuse==3.3.0
 trustcall==0.0.39
 tavily-python==0.7.12
 wikipedia==1.4.0
+en-core-web-sm==3.8.0
 
 # ==========================================
 # 数据处理和验证
