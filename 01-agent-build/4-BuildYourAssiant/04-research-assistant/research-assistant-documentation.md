@@ -292,7 +292,7 @@ _set_env("LANGSMITH_API_KEY")   # LangSmith追踪密钥（可选）
 
 # 启用追踪
 os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_PROJECT"] = "langchain-academy"
+os.environ["LANGSMITH_PROJECT"] = "FlyAIBox"
 ```
 
 ### 基本使用
