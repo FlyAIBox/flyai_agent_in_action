@@ -1,0 +1,202 @@
+<svg viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 28px; font-weight: bold; fill: #0d47a1; }
+      .subtitle { font-family: 'SimSun', serif; font-size: 22px; font-weight: bold; fill: #1565c0; }
+      .phase-title { font-family: 'Times New Roman', serif; font-size: 18px; font-weight: bold; fill: #fff; }
+      .node-title { font-family: 'Times New Roman', serif; font-size: 14px; font-weight: bold; fill: #212121; }
+      .node-desc { font-family: 'SimSun', serif; font-size: 12px; fill: #424242; }
+      .formula { font-family: 'Times New Roman', serif; font-size: 11px; font-style: italic; fill: #c62828; }
+      .annotation { font-family: 'Times New Roman', serif; font-size: 10px; fill: #616161; }
+      
+      .start-node { fill: #4caf50; stroke: #2e7d32; stroke-width: 3; }
+      .process-node { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .decision-node { fill: #fff9c4; stroke: #f57f17; stroke-width: 2; }
+      .parallel-node { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .end-node { fill: #ef5350; stroke: #c62828; stroke-width: 3; }
+      
+      .arrow { stroke: #546e7a; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .parallel-arrow { stroke: #7b1fa2; stroke-width: 2; fill: none; marker-end: url(#parallel-arrowhead); }
+      .decision-arrow { stroke: #f57f17; stroke-width: 2; stroke-dasharray: 5,3; fill: none; marker-end: url(#decision-arrowhead); }
+      .feedback-arrow { stroke: #e91e63; stroke-width: 2; stroke-dasharray: 8,4; fill: none; marker-end: url(#feedback-arrowhead); }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#546e7a" />
+    </marker>
+    <marker id="parallel-arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7b1fa2" />
+    </marker>
+    <marker id="decision-arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f57f17" />
+    </marker>
+    <marker id="feedback-arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#e91e63" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="800" y="40" text-anchor="middle" class="title">DeepResearch Assistant Workflow</text>
+  <text x="800" y="70" text-anchor="middle" class="subtitle">深度研究助手工作流程</text>
+
+  <!-- Phase 1: Initialization -->
+  <rect x="50" y="110" width="1500" height="180" rx="10" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2"/>
+  <text x="70" y="135" class="phase-title" fill="#3f51b5">Phase 1: Analyst Team Generation</text>
+  <text x="70" y="158" class="node-desc" fill="#3f51b5">第一阶段：分析师团队生成</text>
+
+  <!-- Start Node -->
+  <ellipse cx="200" cy="200" rx="80" ry="40" class="start-node"/>
+  <text x="200" y="195" text-anchor="middle" class="node-title" fill="white">START</text>
+  <text x="200" y="212" text-anchor="middle" class="node-desc" fill="white">开始</text>
+
+  <!-- Create Analysts Node -->
+  <rect x="380" y="165" width="200" height="70" rx="8" class="process-node"/>
+  <text x="480" y="190" text-anchor="middle" class="node-title">Create Analysts</text>
+  <text x="480" y="207" text-anchor="middle" class="node-desc">生成分析师团队</text>
+  <text x="480" y="224" text-anchor="middle" class="formula">N ≤ max_analysts</text>
+
+  <!-- Human Feedback Node -->
+  <rect x="680" y="165" width="200" height="70" rx="8" class="decision-node"/>
+  <text x="780" y="190" text-anchor="middle" class="node-title">Human Feedback</text>
+  <text x="780" y="207" text-anchor="middle" class="node-desc">人类反馈</text>
+  <text x="780" y="224" text-anchor="middle" class="formula">HITL Checkpoint</text>
+
+  <!-- Approve Decision -->
+  <path d="M 980 200 L 1040 160 L 1100 200 L 1040 240 Z" class="decision-node"/>
+  <text x="1040" y="197" text-anchor="middle" class="node-title">Approve?</text>
+  <text x="1040" y="212" text-anchor="middle" class="node-desc">批准?</text>
+
+  <!-- Arrows Phase 1 -->
+  <path d="M 280 200 L 380 200" class="arrow"/>
+  <path d="M 580 200 L 680 200" class="arrow"/>
+  <path d="M 880 200 L 980 200" class="arrow"/>
+  
+  <!-- Feedback Loop -->
+  <path d="M 1040 160 Q 1040 100 480 100 L 480 165" class="feedback-arrow"/>
+
+  <!-- Phase 2: Parallel Interviews -->
+  <rect x="50" y="320" width="1500" height="280" rx="10" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+  <text x="70" y="345" class="phase-title" fill="#7b1fa2">Phase 2: Parallel Interview Execution (Map)</text>
+  <text x="70" y="368" class="node-desc" fill="#7b1fa2">第二阶段：并行访谈执行（Map 步骤）</text>
+
+  <!-- Continue to Interviews -->
+  <path d="M 1040 240 L 1040 380" class="arrow"/>
+  <text x="1050" y="310" class="annotation">Yes/是</text>
+
+  <!-- Interview Subgraph Container -->
+  <rect x="100" y="390" width="1400" height="190" rx="8" fill="#fafafa" stroke="#9c27b0" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="120" y="415" class="annotation" font-weight="bold">Interview Sub-graph (访谈子图) × N analysts</text>
+
+  <!-- Interview Nodes -->
+  <g id="interview-sequence">
+    <!-- Ask Question -->
+    <rect x="150" y="440" width="160" height="60" rx="6" class="process-node"/>
+    <text x="230" y="462" text-anchor="middle" class="node-title">Ask Question</text>
+    <text x="230" y="478" text-anchor="middle" class="node-desc">提出问题</text>
+    <text x="230" y="493" text-anchor="middle" class="formula">Q_t</text>
+
+    <!-- Search Web -->
+    <rect x="360" y="410" width="150" height="50" rx="6" class="parallel-node"/>
+    <text x="435" y="430" text-anchor="middle" class="node-title">Search Web</text>
+    <text x="435" y="445" text-anchor="middle" class="node-desc">网络搜索</text>
+
+    <!-- Search Baike -->
+    <rect x="360" y="480" width="150" height="50" rx="6" class="parallel-node"/>
+    <text x="435" y="500" text-anchor="middle" class="node-title">Search Baike</text>
+    <text x="435" y="515" text-anchor="middle" class="node-desc">百科搜索</text>
+
+    <!-- Answer Question -->
+    <rect x="560" y="440" width="160" height="60" rx="6" class="process-node"/>
+    <text x="640" y="462" text-anchor="middle" class="node-title">Answer Question</text>
+    <text x="640" y="478" text-anchor="middle" class="node-desc">回答问题</text>
+    <text x="640" y="493" text-anchor="middle" class="formula">A_t</text>
+
+    <!-- Route Decision -->
+    <path d="M 790 470 L 840 445 L 890 470 L 840 495 Z" class="decision-node"/>
+    <text x="840" y="467" text-anchor="middle" class="node-title">More?</text>
+    <text x="840" y="482" text-anchor="middle" class="node-desc">继续?</text>
+
+    <!-- Save Interview -->
+    <rect x="950" y="440" width="150" height="60" rx="6" class="process-node"/>
+    <text x="1025" y="462" text-anchor="middle" class="node-title">Save Interview</text>
+    <text x="1025" y="478" text-anchor="middle" class="node-desc">保存访谈</text>
+
+    <!-- Write Section -->
+    <rect x="1160" y="440" width="150" height="60" rx="6" class="process-node"/>
+    <text x="1235" y="462" text-anchor="middle" class="node-title">Write Section</text>
+    <text x="1235" y="478" text-anchor="middle" class="node-desc">撰写章节</text>
+    <text x="1235" y="493" text-anchor="middle" class="formula">S_i</text>
+
+    <!-- Arrows for interview -->
+    <path d="M 310 470 L 360 435" class="parallel-arrow"/>
+    <path d="M 310 470 L 360 505" class="parallel-arrow"/>
+    <path d="M 510 435 L 560 455" class="parallel-arrow"/>
+    <path d="M 510 505 L 560 485" class="parallel-arrow"/>
+    <path d="M 720 470 L 790 470" class="arrow"/>
+    <path d="M 890 470 L 950 470" class="arrow"/>
+    <path d="M 1100 470 L 1160 470" class="arrow"/>
+    
+    <!-- Loop back -->
+    <path d="M 840 445 Q 840 390 230 390 L 230 440" class="decision-arrow"/>
+    <text x="500" y="380" class="annotation">t ≤T_max</text>
+  </g>
+
+  <!-- Formula annotation -->
+  <text x="120" y="555" class="formula">Parallel Execution: ∀i ∈ {1,...,N}, Interview_i runs concurrently</text>
+  <text x="120" y="572" class="node-desc">并行执行：所有访谈同时进行</text>
+
+  <!-- Phase 3: Report Generation -->
+  <rect x="50" y="630" width="1500" height="280" rx="10" fill="#e8f5e9" stroke="#388e3c" stroke-width="2"/>
+  <text x="70" y="655" class="phase-title" fill="#2e7d32">Phase 3: Report Synthesis (Reduce)</text>
+  <text x="70" y="678" class="node-desc" fill="#2e7d32">第三阶段：报告合成（Reduce 步骤）</text>
+
+  <!-- Sync Point -->
+  <rect x="150" y="710" width="180" height="70" rx="8" class="parallel-node"/>
+  <text x="240" y="735" text-anchor="middle" class="node-title">Synchronization</text>
+  <text x="240" y="752" text-anchor="middle" class="node-desc">同步汇总</text>
+  <text x="240" y="769" text-anchor="middle" class="formula">Wait All Complete</text>
+
+  <!-- Write Report -->
+  <rect x="390" y="710" width="160" height="70" rx="8" class="process-node"/>
+  <text x="470" y="735" text-anchor="middle" class="node-title">Write Report</text>
+  <text x="470" y="752" text-anchor="middle" class="node-desc">撰写报告主体</text>
+  <text x="470" y="769" text-anchor="middle" class="formula">R = ∑S_i</text>
+
+  <!-- Write Introduction -->
+  <rect x="600" y="670" width="160" height="50" rx="8" class="process-node"/>
+  <text x="680" y="692" text-anchor="middle" class="node-title">Write Intro</text>
+  <text x="680" y="707" text-anchor="middle" class="node-desc">撰写引言</text>
+
+  <!-- Write Conclusion -->
+  <rect x="600" y="750" width="160" height="50" rx="8" class="process-node"/>
+  <text x="680" y="772" text-anchor="middle" class="node-title">Write Conclusion</text>
+  <text x="680" y="787" text-anchor="middle" class="node-desc">撰写结论</text>
+
+  <!-- Finalize Report -->
+  <rect x="820" y="710" width="180" height="70" rx="8" class="process-node"/>
+  <text x="910" y="735" text-anchor="middle" class="node-title">Finalize Report</text>
+  <text x="910" y="752" text-anchor="middle" class="node-desc">最终报告生成</text>
+  <text x="910" y="769" text-anchor="middle" class="formula">F = I + R + C</text>
+
+  <!-- End Node -->
+  <ellipse cx="1100" cy="745" rx="80" ry="40" class="end-node"/>
+  <text x="1100" y="740" text-anchor="middle" class="node-title" fill="white">END</text>
+  <text x="1100" y="757" text-anchor="middle" class="node-desc" fill="white">结束</text>
+
+  <!-- Arrows Phase 3 -->
+  <path d="M 1235 500 L 1235 640 L 240 640 L 240 710" class="parallel-arrow"/>
+  <path d="M 330 745 L 390 745" class="arrow"/>
+  <path d="M 550 745 L 600 695" class="arrow"/>
+  <path d="M 550 745 L 600 775" class="arrow"/>
+  <path d="M 760 695 L 820 730" class="arrow"/>
+  <path d="M 760 775 L 820 760" class="arrow"/>
+  <path d="M 1000 745 L 1020 745" class="arrow"/>
+
+  
+
+  <!-- Connection from Phase 2 to Phase 3 -->
+  <path d="M 840 495 Q 840 550 1380 550 L 1380 880 L 240 880 L 240 710" class="arrow" stroke-dasharray="8,4"/>
+  <text x="1400" y="720" class="annotation">No/否</text>
+  <text x="1320" y="560" class="annotation">All interviews complete</text>
+  <text x="1320" y="575" class="annotation">所有访谈完成</text>
+</svg>

@@ -1,0 +1,223 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 26px; font-weight: bold; fill: #1a237e; }
+      .subtitle { font-family: 'SimSun', serif; font-size: 20px; font-weight: bold; fill: #283593; }
+      .layer-title { font-family: 'Times New Roman', serif; font-size: 16px; font-weight: bold; fill: #fff; }
+      .component { font-family: 'Times New Roman', serif; font-size: 13px; fill: #212121; }
+      .chinese { font-family: 'SimSun', serif; font-size: 12px; fill: #424242; }
+      .formula { font-family: 'Times New Roman', serif; font-size: 11px; font-style: italic; fill: #d32f2f; }
+      
+      .presentation-layer { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .orchestration-layer { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .agent-layer { fill: #e8f5e9; stroke: #388e3c; stroke-width: 2; }
+      .service-layer { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .data-layer { fill: #fce4ec; stroke: #c2185b; stroke-width: 2; }
+      
+      .component-box { fill: #ffffff; stroke: #90a4ae; stroke-width: 1.5; }
+      .arrow { stroke: #546e7a; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .data-flow { stroke: #ef5350; stroke-width: 2; stroke-dasharray: 5,5; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#546e7a" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="35" text-anchor="middle" class="title">DeepResearch Assitant -- System Architecture</text>
+  <text x="700" y="60" text-anchor="middle" class="subtitle">深度研究助手-系统架构</text>
+
+  <!-- Layer 1: Presentation Layer -->
+  <rect x="50" y="90" width="1300" height="100" rx="8" class="presentation-layer"/>
+  <text x="70" y="115" class="layer-title">Presentation Layer</text>
+  <text x="70" y="135" class="chinese" fill="#fff">表现层</text>
+  
+  <g>
+    <rect x="200" y="120" width="200" height="55" rx="5" class="component-box"/>
+    <text x="300" y="145" text-anchor="middle" class="component">User Interface</text>
+    <text x="300" y="162" text-anchor="middle" class="chinese">用户交互界面</text>
+  </g>
+  
+  <g>
+    <rect x="450" y="120" width="200" height="55" rx="5" class="component-box"/>
+    <text x="550" y="145" text-anchor="middle" class="component">Feedback System</text>
+    <text x="550" y="162" text-anchor="middle" class="chinese">反馈系统</text>
+  </g>
+  
+  <g>
+    <rect x="700" y="120" width="200" height="55" rx="5" class="component-box"/>
+    <text x="800" y="145" text-anchor="middle" class="component">Report Viewer</text>
+    <text x="800" y="162" text-anchor="middle" class="chinese">报告查看器</text>
+  </g>
+
+  <!-- Layer 2: Orchestration Layer -->
+  <rect x="50" y="220" width="1300" height="120" rx="8" class="orchestration-layer"/>
+  <text x="70" y="245" class="layer-title">Orchestration Layer</text>
+  <text x="70" y="265" class="chinese" fill="#fff">编排层</text>
+  
+  <g>
+    <rect x="150" y="250" width="220" height="75" rx="5" class="component-box"/>
+    <text x="260" y="275" text-anchor="middle" class="component">StateGraph Engine</text>
+    <text x="260" y="292" text-anchor="middle" class="chinese">状态图引擎</text>
+    <text x="260" y="310" text-anchor="middle" class="formula">G = (V, E, S)</text>
+  </g>
+  
+  <g>
+    <rect x="420" y="250" width="220" height="75" rx="5" class="component-box"/>
+    <text x="530" y="275" text-anchor="middle" class="component">Workflow Controller</text>
+    <text x="530" y="292" text-anchor="middle" class="chinese">工作流控制器</text>
+    <text x="530" y="310" text-anchor="middle" class="formula">Map-Reduce Pattern</text>
+  </g>
+  
+  <g>
+    <rect x="690" y="250" width="220" height="75" rx="5" class="component-box"/>
+    <text x="800" y="275" text-anchor="middle" class="component">State Manager</text>
+    <text x="800" y="292" text-anchor="middle" class="chinese">状态管理器</text>
+    <text x="800" y="310" text-anchor="middle" class="formula">Checkpointing</text>
+  </g>
+  
+  <g>
+    <rect x="960" y="250" width="220" height="75" rx="5" class="component-box"/>
+    <text x="1070" y="275" text-anchor="middle" class="component">HITL Manager</text>
+    <text x="1070" y="292" text-anchor="middle" class="chinese">人机协同管理</text>
+    <text x="1070" y="310" text-anchor="middle" class="formula">Interrupt And Resume</text>
+  </g>
+
+  <!-- Layer 3: Agent Layer -->
+  <rect x="50" y="370" width="1300" height="150" rx="8" class="agent-layer"/>
+  <text x="70" y="395" class="layer-title">Multi-Agent Layer</text>
+  <text x="70" y="415" class="chinese" fill="#fff">多智能体层</text>
+  
+  <g>
+    <rect x="100" y="425" width="200" height="80" rx="5" class="component-box"/>
+    <text x="200" y="450" text-anchor="middle" class="component">Analyst Generator</text>
+    <text x="200" y="467" text-anchor="middle" class="chinese">分析师生成器</text>
+    <text x="200" y="485" text-anchor="middle" class="formula">N = max_analysts</text>
+  </g>
+  
+  <g>
+    <rect x="350" y="425" width="200" height="80" rx="5" class="component-box"/>
+    <text x="450" y="450" text-anchor="middle" class="component">Interview Agent</text>
+    <text x="450" y="467" text-anchor="middle" class="chinese">访谈智能体</text>
+    <text x="450" y="485" text-anchor="middle" class="formula">T_max = 2 rounds</text>
+  </g>
+  
+  <g>
+    <rect x="600" y="425" width="200" height="80" rx="5" class="component-box"/>
+    <text x="700" y="450" text-anchor="middle" class="component">Expert Simulator</text>
+    <text x="700" y="467" text-anchor="middle" class="chinese">专家模拟器</text>
+    <text x="700" y="485" text-anchor="middle" class="formula">Context-aware</text>
+  </g>
+  
+  <g>
+    <rect x="850" y="425" width="200" height="80" rx="5" class="component-box"/>
+    <text x="950" y="450" text-anchor="middle" class="component">Report Writer</text>
+    <text x="950" y="467" text-anchor="middle" class="chinese">报告写作器</text>
+    <text x="950" y="485" text-anchor="middle" class="formula">Structured Output</text>
+  </g>
+  
+  <g>
+    <rect x="1100" y="425" width="200" height="80" rx="5" class="component-box"/>
+    <text x="1200" y="450" text-anchor="middle" class="component">Section Compiler</text>
+    <text x="1200" y="467" text-anchor="middle" class="chinese">章节编译器</text>
+    <text x="1200" y="485" text-anchor="middle" class="formula">Markdown Format</text>
+  </g>
+
+  <!-- Layer 4: Service Layer -->
+  <rect x="50" y="550" width="1300" height="130" rx="8" class="service-layer"/>
+  <text x="70" y="575" class="layer-title">Service Layer</text>
+  <text x="70" y="595" class="chinese" fill="#fff">服务层</text>
+  
+  <g>
+    <rect x="150" y="605" width="250" height="60" rx="5" class="component-box"/>
+    <text x="275" y="630" text-anchor="middle" class="component">LLM Service</text>
+    <text x="275" y="647" text-anchor="middle" class="chinese">大模型服务 (GPT-4o)</text>
+  </g>
+  
+  <g>
+    <rect x="450" y="605" width="250" height="60" rx="5" class="component-box"/>
+    <text x="575" y="630" text-anchor="middle" class="component">Search Service</text>
+    <text x="575" y="647" text-anchor="middle" class="chinese">搜索服务 (Tavily)</text>
+  </g>
+  
+  <g>
+    <rect x="750" y="605" width="250" height="60" rx="5" class="component-box"/>
+    <text x="875" y="630" text-anchor="middle" class="component">Baike Service</text>
+    <text x="875" y="647" text-anchor="middle" class="chinese">百科服务</text>
+  </g>
+  
+  <g>
+    <rect x="1050" y="605" width="250" height="60" rx="5" class="component-box"/>
+    <text x="1175" y="630" text-anchor="middle" class="component">Validation Service</text>
+    <text x="1175" y="647" text-anchor="middle" class="chinese">验证服务 (Pydantic)</text>
+  </g>
+
+  <!-- Layer 5: Data Layer -->
+  <rect x="50" y="710" width="1300" height="100" rx="8" class="data-layer"/>
+  <text x="70" y="735" class="layer-title">Data Layer</text>
+  <text x="70" y="755" class="chinese" fill="#fff">数据层</text>
+  
+  <g>
+    <rect x="200" y="740" width="200" height="55" rx="5" class="component-box"/>
+    <text x="300" y="765" text-anchor="middle" class="component">State Store</text>
+    <text x="300" y="782" text-anchor="middle" class="chinese">状态存储</text>
+  </g>
+  
+  <g>
+    <rect x="450" y="740" width="200" height="55" rx="5" class="component-box"/>
+    <text x="550" y="765" text-anchor="middle" class="component">Context Cache</text>
+    <text x="550" y="782" text-anchor="middle" class="chinese">上下文缓存</text>
+  </g>
+  
+  <g>
+    <rect x="700" y="740" width="200" height="55" rx="5" class="component-box"/>
+    <text x="800" y="765" text-anchor="middle" class="component">Trace Store</text>
+    <text x="800" y="782" text-anchor="middle" class="chinese">追踪存储</text>
+  </g>
+  
+  <g>
+    <rect x="950" y="740" width="200" height="55" rx="5" class="component-box"/>
+    <text x="1050" y="765" text-anchor="middle" class="component">Report Store</text>
+    <text x="1050" y="782" text-anchor="middle" class="chinese">报告存储</text>
+  </g>
+
+  <!-- Arrows between layers -->
+  <path d="M 300 175 L 300 250" class="arrow"/>
+  <path d="M 550 175 L 550 250" class="arrow"/>
+  <path d="M 800 175 L 800 250" class="arrow"/>
+  
+  <path d="M 200 325 L 200 425" class="arrow"/>
+  <path d="M 450 325 L 450 425" class="arrow"/>
+  <path d="M 700 325 L 700 425" class="arrow"/>
+  <path d="M 950 325 L 950 425" class="arrow"/>
+  
+  <path d="M 275 505 L 275 605" class="arrow"/>
+  <path x="575 505 L 575 605" class="arrow"/>
+  <path d="M 875 505 L 875 605" class="arrow"/>
+  <path d="M 1175 505 L 1175 605" class="arrow"/>
+  
+  <path d="M 300 665 L 300 740" class="arrow"/>
+  <path d="M 550 665 L 550 740" class="arrow"/>
+  <path d="M 800 665 L 800 740" class="arrow"/>
+  <path d="M 1050 665 L 1050 740" class="arrow"/>
+
+  <!-- Data flow annotations -->
+  <text x="1250" y="140" class="formula">User Input</text>
+  <text x="1250" y="290" class="formula">Workflow</text>
+  <text x="1250" y="465" class="formula">Processing</text>
+  <text x="1250" y="635" class="formula">Services</text>
+  <text x="1250" y="770" class="formula">Storage</text>
+
+  <!-- Key metrics box -->
+  <rect x="50" y="830" width="400" height="60" rx="5" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+  <text x="250" y="852" text-anchor="middle" class="component" font-weight="bold">Architecture Metrics</text>
+  <text x="70" y="872" class="formula">Layers: L = 5 | Components: C = 20 | Parallelism: P = O(N)</text>
+
+  <!-- Legend -->
+  <g transform="translate(500, 830)">
+    <rect x="0" y="0" width="850" height="60" rx="5" fill="#fff" stroke="#546e7a" stroke-width="1"/>
+    <text x="10" y="20" class="component" font-weight="bold">Architecture Pattern:</text>
+    <text x="10" y="40" class="formula">Layered + Event-Driven + Multi-Agent Orchestration</text>
+    <text x="10" y="55" class="chinese">分层架构 + 事件驱动 + 多智能体编排</text>
+  </g>
+</svg>

@@ -1,0 +1,111 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .subtitle { font-family: 'SimSun', serif; font-size: 18px; font-weight: bold; fill: #34495e; }
+      .label { font-family: 'Times New Roman', serif; font-size: 14px; fill: #2c3e50; }
+      .chinese { font-family: 'SimSun', serif; font-size: 14px; fill: #555; }
+      .box { fill: #ecf0f1; stroke: #3498db; stroke-width: 2; }
+      .core-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .layer-box { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+      .tool-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+      .arrow { stroke: #7f8c8d; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .formula { font-family: 'Times New Roman', serif; font-size: 12px; font-style: italic; fill: #e74c3c; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7f8c8d" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" class="title">DeepResearch Assitant -- Tech Architecture</text>
+  <text x="600" y="65" text-anchor="middle" class="subtitle">深度研究助手-技术栈架构</text>
+
+  <!-- Core Framework Layer -->
+  <rect x="450" y="100" width="300" height="120" rx="10" class="core-box"/>
+  <text x="600" y="130" text-anchor="middle" class="label" fill="white" font-weight="bold">Core Framework</text>
+  <text x="600" y="150" text-anchor="middle" class="chinese" fill="white">核心框架</text>
+  
+  <text x="480" y="175" class="label" fill="white">• LangGraph 0.6.7</text>
+  <text x="480" y="195" class="label" fill="white">• LangChain Core 0.3.75</text>
+  <text x="480" y="215" class="chinese" fill="white">状态图工作流引擎</text>
+
+  <!-- LLM Layer -->
+  <g>
+    <rect x="100" y="270" width="280" height="140" rx="10" class="layer-box"/>
+    <text x="240" y="300" text-anchor="middle" class="subtitle">LLM Integration</text>
+    <text x="240" y="320" text-anchor="middle" class="chinese">大语言模型集成</text>
+    
+    <text x="120" y="350" class="label">• OpenAI GPT-4o</text>
+    <text x="120" y="370" class="label">• Temperature: T = 0</text>
+    <text x="120" y="390" class="chinese">确定性输出配置</text>
+  </g>
+
+  <!-- Data Sources Layer -->
+  <g>
+    <rect x="820" y="270" width="280" height="140" rx="10" class="layer-box"/>
+    <text x="960" y="300" text-anchor="middle" class="subtitle">Data Sources</text>
+    <text x="960" y="320" text-anchor="middle" class="chinese">数据源</text>
+    
+    <text x="840" y="350" class="label">• Tavily Search API</text>
+    <text x="840" y="370" class="label">• Baidu Baike Loader</text>
+    <text x="840" y="390" class="chinese">多源信息检索</text>
+  </g>
+
+  <!-- State Management -->
+  <g>
+    <rect x="100" y="460" width="280" height="140" rx="10" class="tool-box"/>
+    <text x="240" y="490" text-anchor="middle" class="subtitle">State Management</text>
+    <text x="240" y="510" text-anchor="middle" class="chinese">状态管理</text>
+    
+    <text x="120" y="540" class="label">• MemorySaver</text>
+    <text x="120" y="560" class="label">• Checkpointer</text>
+    <text x="120" y="580" class="chinese">会话状态持久化</text>
+  </g>
+
+  <!-- Data Models -->
+  <g>
+    <rect x="460" y="460" width="280" height="140" rx="10" class="tool-box"/>
+    <text x="600" y="490" text-anchor="middle" class="subtitle">Data Models</text>
+    <text x="600" y="510" text-anchor="middle" class="chinese">数据模型</text>
+    
+    <text x="480" y="540" class="label">• Pydantic BaseModel</text>
+    <text x="480" y="560" class="label">• TypedDict</text>
+    <text x="480" y="580" class="chinese">结构化输出验证</text>
+  </g>
+
+  <!-- Monitoring -->
+  <g>
+    <rect x="820" y="460" width="280" height="140" rx="10" class="tool-box"/>
+    <text x="960" y="490" text-anchor="middle" class="subtitle">Monitoring</text>
+    <text x="960" y="510" text-anchor="middle" class="chinese">监控追踪</text>
+    
+    <text x="840" y="540" class="label">• LangSmith Tracing</text>
+    <text x="840" y="560" class="label">• Execution Debugging</text>
+    <text x="840" y="580" class="chinese">实时执行追踪</text>
+  </g>
+
+  <!-- Python Environment -->
+  <rect x="350" y="650" width="500" height="100" rx="10" class="box"/>
+  <text x="600" y="680" text-anchor="middle" class="subtitle">Development Environment</text>
+  <text x="600" y="700" text-anchor="middle" class="chinese">开发环境</text>
+  <text x="600" y="725" text-anchor="middle" class="label">Python 3.12 • Jupyter Notebook • Conda</text>
+
+  <!-- Arrows -->
+  <path d="M 600 220 L 240 270" class="arrow"/>
+  <path d="M 600 220 L 960 270" class="arrow"/>
+  <path d="M 240 410 L 240 460" class="arrow"/>
+  <path d="M 600 410 L 600 460" class="arrow"/>
+  <path d="M 960 410 L 960 460" class="arrow"/>
+  <path d="M 240 600 L 450 650" class="arrow"/>
+  <path d="M 600 600 L 600 650" class="arrow"/>
+  <path d="M 960 600 L 750 650" class="arrow"/>
+
+  <!-- Key Formula -->
+  <g>
+    <rect x="50" y="700" width="250" height="80" rx="5" fill="#fff" stroke="#e74c3c" stroke-width="2"/>
+    <text x="175" y="725" text-anchor="middle" class="formula" font-size="14px">Key Metrics:</text>
+    <text x="175" y="745" text-anchor="middle" class="formula">Parallelism = N_analysts</text>
+    <text x="175" y="765" text-anchor="middle" class="formula">Quality ∝ log(N_sources)</text>
+  </g>
+</svg>
