@@ -15,6 +15,7 @@ langgraph-prebuilt==0.6.4
 langgraph-checkpoint-sqlite==2.0.11
 langgraph-cli==0.4.2
 langchain_huggingface==0.3.1
+langgraph_sdk==0.2.6
 # langsmith
 
 # ==========================================
