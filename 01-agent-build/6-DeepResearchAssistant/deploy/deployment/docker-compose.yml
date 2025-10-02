@@ -42,7 +42,7 @@ services:
             OPENAI_BASE_URL: ${OPENAI_BASE_URL}
             TAVILY_API_KEY: ${TAVILY_API_KEY}
             LANGSMITH_API_KEY: ${LANGSMITH_API_KEY}
-            LANGSMITH_TRACING: "true"
-            LANGSMITH_PROJECT: "ResearchAssistant"
+            # LANGSMITH_TRACING: "true"
+            # LANGSMITH_PROJECT: "ResearchAssistant"
             POSTGRES_URI: postgres://postgres:postgres@langgraph-postgres:5432/postgres?sslmode=disable
 
