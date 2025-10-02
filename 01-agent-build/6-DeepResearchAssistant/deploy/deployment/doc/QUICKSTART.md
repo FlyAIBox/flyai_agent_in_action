@@ -40,7 +40,7 @@ langgraph build -t research-assistant-image
 ### 第4步：启动服务
 
 ```bash
-docker compose up -d
+docker compose --env-file .env up -d
 ```
 
 等待服务启动（约30秒），你会看到三个容器：
@@ -179,7 +179,7 @@ ports:
 **解决**: 清理 Docker 缓存后重新构建
 ```bash
 docker system prune -a
-langgraph build -t research-assistant-image --force
+langgraph build -t research-assistant-image
 ```
 
 ### Q4: 连接超时

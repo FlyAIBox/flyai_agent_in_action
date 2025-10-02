@@ -573,7 +573,10 @@ interview_builder.add_edge("save_interview", "write_section")
 interview_builder.add_edge("write_section", END)
 
 # 编译访谈工作流
-interview_graph = interview_builder.compile()
+interview_memory = MemorySaver()
+interview_graph = interview_builder.compile(checkpointer=interview_memory).with_config(
+    run_name="Conduct Interviews"
+)
 
 
 ## 构建完整的研究图
@@ -615,4 +618,3 @@ graph = builder.compile(
     interrupt_before=['human_feedback'],
     checkpointer=memory
 )
-

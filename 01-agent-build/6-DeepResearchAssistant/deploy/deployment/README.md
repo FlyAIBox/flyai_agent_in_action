@@ -107,7 +107,7 @@ langgraph build -t research-assistant-image
 使用 Docker Compose 启动所有服务：
 
 ```bash
-docker compose up -d
+docker compose --env-file .env up -d
 ```
 
 这将启动三个容器：
@@ -331,7 +331,7 @@ docker compose down -v
 langgraph build -t research-assistant-image --force
 
 # 重启服务
-docker compose up -d --force-recreate
+docker compose --env-file .env up -d --force-recreate
 ```
 
 ## 性能优化
