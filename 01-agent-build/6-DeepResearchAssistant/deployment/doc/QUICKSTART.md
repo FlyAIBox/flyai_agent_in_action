@@ -14,7 +14,7 @@
 ### 第1步：安装 LangGraph CLI
 
 ```bash
-pip install langgraph-cli
+pip install langgraph-cli==0.4.2
 ```
 
 ### 第2步：配置环境变量

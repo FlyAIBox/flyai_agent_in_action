@@ -38,9 +38,7 @@ from langchain_openai import ChatOpenAI
 # 导入搜索工具
 from langchain_community.tools.tavily_search import TavilySearchResults
 
-# 导入百度百科加载器（假设已经在同级目录）
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+# 导入百度百科加载器（从同级目录导入）
 from baike_loader import BaiduBaikeLoader
 
 # LangGraph 相关导入

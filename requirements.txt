@@ -34,7 +34,7 @@ langfuse==3.3.0
 trustcall==0.0.39
 tavily-python==0.7.12
 wikipedia==1.4.0
-en-core-web-sm==3.8.0
+#en-core-web-sm==3.8.0
 
 # ==========================================
 # 数据处理和验证
