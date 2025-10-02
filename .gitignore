@@ -365,3 +365,4 @@ dmypy.json
 .kiro/specs/readnote_agent/tasks.md
 .kiro/specs/readnote_agent/requirements.md
 .kiro/specs/readnote_agent/design.md
+research_report*.md
